@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CKB System Testing" parallel="classes" thread-count="5">
+  <listeners>
+    <listener class-name="org.nervos.ckb.util.TestRunnerListener"/>
+    <listener class-name="org.nervos.ckb.util.GitInfoListener"/>
+  </listeners>
+
+  <test name="CLI Tests" preserve-order="true" verbose="2">
+    <classes>
+      <class name="org.nervos.ckb.cliTest.HelpComLineTest"/>
+      <class name="org.nervos.ckb.cliTest.MinerCommandLineTest"/>
+      <class name="org.nervos.ckb.cliTest.ExportCommandLineTest"/>
+      <class name="org.nervos.ckb.cliTest.RunCommandLineTest"/>
+      <class name="org.nervos.ckb.cliTest.ImportCommanLineTest"/>
+    </classes>
+  </test>
+  <test name="JSONRPC API Tests" preserve-order="true" verbose="2">
+    <classes>
+      <class name="org.nervos.ckb.jsonrpcTest.GetTipBlockNumberTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetBlockHashTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetTipHeaderTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetLiveCellTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.LocalNodeInfoTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.SendTransactionTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetCellsByLockHashTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetBlockTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetTransactionTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetPeersTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetBlockByNumberTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetBlockchainInfoTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetPeersStateTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.TxPoolInfoTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetCurrentEpochTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.GetEpochByNumberTest"/>
+    </classes>
+  </test>
+  <test name="LOAD Tests" preserve-order="true" verbose="2">
+    <classes>
+      <class name="org.nervos.ckb.loadTest.LoadTest"/>
+    </classes>
+  </test>
+  <test name="Java SDK Tests" preserve-order="true" verbose="2">
+    <classes>
+      <class name="org.nervos.ckb.javaSDKTest.GetBlockTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetTipBlockNumberTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.LocalNodeInfoTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetBlockHashTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetTipHeaderTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetCellsByLockHashTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetLiveCellTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.SendTransactionTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetTransactionTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetCurrentEpochTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetEpochByNumberTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetBlockByNumberTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetBlockchainInfoTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetPeersStateTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.TxPoolInfoTest"/>
+      <class name="org.nervos.ckb.javaSDKTest.GetPeersTest"/>
+    </classes>
+  </test>
+
+</suite>

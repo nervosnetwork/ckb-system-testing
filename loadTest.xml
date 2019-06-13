@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CKB Load Testing" parallel="instances" thread-count="1">
+  <listeners>
+    <listener class-name="org.nervos.ckb.util.TestRunnerListener"/>
+    <listener class-name="org.nervos.ckb.util.GitInfoListener"/>
+    <listener class-name="org.nervos.ckb.util.CanRunMultipleTimesListener"/>
+  </listeners>
+
+  <test name="LOAD Tests" preserve-order="true" verbose="2">
+    <classes>
+      <class name="org.nervos.ckb.loadTest.LoadTest"/>
+    </classes>
+  </test>
+
+</suite>

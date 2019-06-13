@@ -1,0 +1,74 @@
+/test-output/
+
+/target/
+
+# ignore IDE project settings
+/.idea/
+# IML is a module file created by IntelliJ IDEA, it stores information about a development module, which may be a Java, Plugin, Android, or Maven component; saves the module paths, dependencies, and other settings.
+*.iml
+
+.env
+
+# ignore Eclipse related files
+# https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PyDev specific (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT-specific (C/C++ Development Tooling)
+.cproject
+
+# CDT- autotools
+.autotools
+
+# Java annotation processor (APT)
+.factorypath
+
+# PDT-specific (PHP Development Tools)
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# STS (Spring Tool Suite)
+.springBeans
+
+# Code Recommenders
+.recommenders/
+
+# Annotation Processing
+.apt_generated/
+
+# Scala IDE specific (Scala & Java development for Eclipse)
+.cache-main
+.scala_dependencies
+.worksheet
+
+# The .classpath file is maintained by Eclipse's JDT feature (feature = set of plugins).
+.classpath
+
+# The .project file is maintained by the core Eclipse platform, and its goal is to describe the project from a generic, plugin-independent Eclipse view.
+.project
