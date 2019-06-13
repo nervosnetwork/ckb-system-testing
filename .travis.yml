@@ -1,0 +1,38 @@
+################
+# CI Workflow:
+# feature development, trigger by `git push`:
+#   build -> test -> code_audit
+#
+# Stages:
+# - test: run `make test`
+# - code_quality: run `make code-quality`
+#
+# ENV variables:
+# - CKB_DOCKER_IMAGE_TAG_NAME, set this ENV variable to specified test target version, get available tag from https://hub.docker.com/r/nervos/ckb/tags
+#
+################
+
+stages:
+  - test
+  # TODO: add code quality audit
+  # - code_quality
+
+# os config
+sudo: false
+
+# language config
+language: java
+jdk:
+  - oraclejdk9
+
+# install dependencies
+install: make setup
+
+jobs:
+  include:
+    - stage: test
+      script: make test
+    # TODO: add code quality audit
+    # - stage: code_quality
+    #   if: branch != master # run code_audit for feature branches only
+    #   script: make code-quality
