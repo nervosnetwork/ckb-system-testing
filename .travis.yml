@@ -28,6 +28,9 @@ jdk:
 # install dependencies
 install: make setup
 
+env:
+  - CKB_START_LOCAL_TESTNET=1
+
 jobs:
   include:
     - stage: test
