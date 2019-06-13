@@ -26,8 +26,6 @@ public class HttpUtils {
   public static String sendJson(String sendUrl, String data) {
     CloseableHttpClient client = HttpClients.createDefault();
     HttpPost post = new HttpPost(sendUrl);
-    System.out.println("Request address:" + sendUrl);
-    System.out.println("Request parameters:" + data);
     //StringEntity myEntity = new StringEntity(data, ContentType.APPLICATION_JSON);
     StringEntity myEntity = new StringEntity(data, "UTF-8");
     myEntity.setContentEncoding("UTF-8");
@@ -41,10 +39,11 @@ public class HttpUtils {
       if (response.getStatusLine().getStatusCode() == 200) {
         HttpEntity entity = response.getEntity();
         responseContent = EntityUtils.toString(entity, "UTF-8");
-        System.out.println("Response content:" + responseContent);
-
       }
     } catch (IOException e) {
+      System.out.println("Request URL:" + sendUrl);
+      System.out.println("Request parameters:" + data);
+      System.out.println("Response content:" + responseContent);
       e.printStackTrace();
     } finally {
       close(response, client);
