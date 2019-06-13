@@ -36,7 +36,7 @@ public class ImportCommanLineTest extends TestBase {
     importCkbSystem = new CKBSystem();
     dockerName = importCkbSystem.getDockerName();
     ckbDockerImageTagName = importCkbSystem.getCkbDockerImageTagName();
-    importCkbSystem.enableDebug();
+    // importCkbSystem.enableDebug();
 
     importCkbSystem.cleanEnv();
 
