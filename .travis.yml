@@ -6,6 +6,7 @@
 # Stages:
 # - test: run `make test`
 # - code_quality: run `make code-quality`
+# - deploy: upload test report hosting with Github Pages
 #
 # ENV variables:
 # - CKB_DOCKER_IMAGE_TAG_NAME, set this ENV variable to specified test target version, get available tag from https://hub.docker.com/r/nervos/ckb/tags
@@ -16,6 +17,7 @@ stages:
   - test
   # TODO: add code quality audit
   # - code_quality
+  - deploy
 
 # os config
 sudo: false
@@ -39,3 +41,10 @@ jobs:
     # - stage: code_quality
     #   if: branch != master # run code_audit for feature branches only
     #   script: make code-quality
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, as a secure variable
+  keep_history: true
+  local_dir: target/surefire-reports/
