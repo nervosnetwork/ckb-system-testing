@@ -50,7 +50,7 @@ public class RunCommandLineTest extends TestBase {
   public void testRestartCkbRun() {
     //start a idle container
     CKBSystem runCkbSystem = new CKBSystem();
-    runCkbSystem.enableDebug();
+    // runCkbSystem.enableDebug();
     runCkbSystem.setRunInDocker(true);
     int idlePort = NetworkUtils.getIdlePort();
     runCkbSystem

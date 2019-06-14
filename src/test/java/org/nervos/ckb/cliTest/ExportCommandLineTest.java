@@ -29,7 +29,7 @@ public class ExportCommandLineTest extends TestBase {
     exportCkbSystem = new CKBSystem();
     dockerName = exportCkbSystem.getDockerName();
     ckbDockerImageTagName = exportCkbSystem.getCkbDockerImageTagName();
-    exportCkbSystem.enableDebug();
+    // exportCkbSystem.enableDebug();
 
     exportCkbSystem.cleanEnv();
 
