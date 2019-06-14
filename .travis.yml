@@ -27,6 +27,11 @@ language: java
 jdk:
   - oraclejdk9
 
+cache:
+  directories:
+  - $HOME/.m2 # for Maven
+  - libs/org/nervos/ckb/ckb-sdk-java/ # downloaded ckb-sdk-java jar files
+
 # install dependencies
 install: make setup
 
