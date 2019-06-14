@@ -38,7 +38,7 @@ install-sdk:
 	fi;
 
 	@echo "Install SDK package"
-	mvn clean install -U -DskipTests
+	mvn clean install -DskipTests
 	@echo "You should see BUILD SUCCESS"
 
 # Download .jar from CI_URL$$CKB_SDK_JAVA_VERSION
