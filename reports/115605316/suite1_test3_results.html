@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - LOAD Tests</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>LOAD Tests</h1>
+<p>
+  Test duration: 347.875s
+</p>
+
+
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.loadTest.LoadTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testSendTXBlankNegative
+      </td>
+  <td class="duration">
+    0.011s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[],"inputs":[],"deps":[],"version":"0","witnesses":[]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXOverNegative
+      </td>
+  <td class="duration">
+    0.043s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"200000000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"400000000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0xd2da364adc2138bdaa077d144141806d920c7c02be120f467d1606549c63efb4"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x7c77c04b904bd937bd371ab0d413ed6eb887661e2484bc198aca6934ba5ea4e3"}}],"version":"0","witnesses":[]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPositive
+      </td>
+  <td class="duration">
+    120.584s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"6000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"240000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0xd2da364adc2138bdaa077d144141806d920c7c02be120f467d1606549c63efb4"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x7c77c04b904bd937bd371ab0d413ed6eb887661e2484bc198aca6934ba5ea4e3"}}],"version":"0","witnesses":[{"data":["0x03330c286cf95d9d96bb80ee18a96d1b97fbba9fdbd01b42313ceca12f33352c07","0x304402207034aa81ebb668e77de1d26cbf3a38654d3d0b2d81736e223f05fd10ca76fbce0220783626507dbb08313fda9630a96f4aad658038ba42b0aab5fc1b908a216659cb","0x4600000000000000"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPositive
+      </td>
+  <td class="duration">
+    35.190s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"6000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"244000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0x3e76801724eb0056c8d3bc2c77622c6e77c6b8b898b30730c1adc976d65f5ad6"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x7c77c04b904bd937bd371ab0d413ed6eb887661e2484bc198aca6934ba5ea4e3"}}],"version":"0","witnesses":[{"data":["0x03330c286cf95d9d96bb80ee18a96d1b97fbba9fdbd01b42313ceca12f33352c07","0x3045022100c88478541a728e5c5f19b501c809d9a8d94d3a5e6ece4da599b3d837d002dd86022031c53effbe9c9b5f77e5e17dc140b8d3f895c6498583614503ad40f7acf9e7f3","0x4700000000000000"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPreviousNegative
+      </td>
+  <td class="duration">
+    0.032s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"100000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"300000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0xd2da364adc2138bdaa077d144141806d920c7c02be120f467d1606549c63efb4"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x7c77c04b904bd937bd371ab0d413ed6eb887661e2484bc198aca6934ba5ea4e3"}}],"version":"0","witnesses":[]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXWithoutVerification
+      </td>
+  <td class="duration">
+    80.397s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"50000000000"},{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"50000000000"},{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"50000000000"},{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"50000000000"},{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08"},"capacity":"50000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0x7e3345ded44dbf3940327af448f84eb190fdb719e17f7f0d1ef92cba91d76811"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x7c77c04b904bd937bd371ab0d413ed6eb887661e2484bc198aca6934ba5ea4e3"}}],"version":"0","witnesses":[{"data":["0x03330c286cf95d9d96bb80ee18a96d1b97fbba9fdbd01b42313ceca12f33352c07","0x3045022100a01bd737bf6655fa7405d0bd16ee34b7a26e627c9efd3a33b6d500ea04b2cf1f022003d88a2af6e01acaffb2e7a796557df43a21bec0f2bb3c13bdab1b5159f7974d","0x4700000000000000"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>
