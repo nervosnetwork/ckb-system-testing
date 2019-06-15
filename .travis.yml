@@ -6,6 +6,7 @@
 # Stages:
 # - test: run `make test`
 # - code_quality: run `make code-quality`
+# - deploy: upload test report hosting with Github Pages
 #
 # ENV variables:
 # - CKB_DOCKER_IMAGE_TAG_NAME, set this ENV variable to specified test target version, get available tag from https://hub.docker.com/r/nervos/ckb/tags
@@ -25,17 +26,35 @@ language: java
 jdk:
   - oraclejdk9
 
+cache:
+  directories:
+    - $HOME/.m2 # for Maven
+    - libs/org/nervos/ckb/ckb-sdk-java/ # downloaded ckb-sdk-java jar files
+
 # install dependencies
 install: make setup
 
 env:
-  - CKB_START_LOCAL_TESTNET=1
+  - CKB_START_LOCAL_TESTNET=1 CKB_DOCKER_IMAGE_TAG_NAME=v0.13.0
 
 jobs:
   include:
     - stage: test
-      script: make test
+      script:
+        - make test
+        - scripts/travis-upload-test-report-to-gh-pages.sh
+
     # TODO: add code quality audit
     # - stage: code_quality
     #   if: branch != master # run code_audit for feature branches only
     #   script: make code-quality
+
+# following config is not working
+# Skipping a deployment with the pages provider because the current build is a pull request.
+# https://github.com/travis-ci/travis-ci/issues/7338
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, as a secure variable
+#   keep_history: true
+#   local_dir: target/surefire-reports/
