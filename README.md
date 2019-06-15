@@ -2,6 +2,9 @@
 
 This project is a [TestNG](https://testng.org/) (Java) project, using for running system tests for [Nervos CKB](https://github.com/nervosnetwork/ckb).
 
+[![Build Status](https://travis-ci.com/nervosnetwork/ckb-system-testing.svg?branch=master)](https://travis-ci.com/nervosnetwork/ckb-system-testing)
+![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/nervosnetwork/ckb-system-testing.svg)
+
 ## Getting Started
 
 These instructions will guide you how to run and write test cases.
