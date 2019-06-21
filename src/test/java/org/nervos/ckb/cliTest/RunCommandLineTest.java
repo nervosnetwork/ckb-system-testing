@@ -110,7 +110,7 @@ public class RunCommandLineTest extends TestBase {
   @DataProvider
   public Object[][] positiveData() {
     return new Object[][]{
-        {"cat " + defaultPath + "logs/run.log", "INFO network  Listen on address"}
+        {"cat " + defaultPath + "logs/run.log", "INFO ckb-network  Listen on address"}
     };
   }
 
