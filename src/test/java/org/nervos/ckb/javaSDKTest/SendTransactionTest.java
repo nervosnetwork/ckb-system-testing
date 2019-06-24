@@ -3,10 +3,8 @@ package org.nervos.ckb.javaSDKTest;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
 
-import org.nervos.ckb.util.CapacityUnits;
 import java.io.IOException;
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -22,6 +20,7 @@ import org.nervos.ckb.methods.type.Script;
 import org.nervos.ckb.methods.type.Transaction;
 import org.nervos.ckb.methods.type.TransactionWithStatus.TxStatus;
 import org.nervos.ckb.methods.type.Witness;
+import org.nervos.ckb.util.CapacityUnits;
 import org.nervos.ckb.utils.Numeric;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -31,7 +30,7 @@ import org.testng.annotations.Test;
 public class SendTransactionTest extends JavaSDKTestBase {
 
   CapacityUnits capacityUnits = new CapacityUnits();
-  private List<Witness> witnesses = new ArrayList<>();
+  private List<Witness> witnesses = Collections.singletonList(new Witness(Collections.emptyList()));
   //  private String depsHash;
   private String index = "0";
   // for outputs
@@ -44,6 +43,8 @@ public class SendTransactionTest extends JavaSDKTestBase {
   private String data = "0x";
   private String version = "0";
   private long originCapacity = 50000;
+  private String getCellMinBlock = "1";
+  private String getCellMaxBlock = "20";
 
   @BeforeClass
   public void setOriginCapacity() throws IOException {
@@ -146,14 +147,13 @@ public class SendTransactionTest extends JavaSDKTestBase {
         buildDeps(),
         buildInputs(sdkPositivePrevious.txHash, sdkPositivePrevious.index),
         buildOutputs(60, outputCapacity),
-        new ArrayList<>());
+        Collections.singletonList(new Witness(Collections.emptyList())));
     String txHash = ckbService.computeTransactionHash(positiveTx).send().getTransactionHash();
     printout("positiveTx computeTransactionHash is: " + txHash);
-    Witness witness = new Witness(Numeric.toBigInt(privateKey), txHash);
-    positiveTx.witnesses.add(witness);
-    printout("positiveTx.witnesses.get(0).data : " + positiveTx.witnesses.get(0).data);
+    Transaction signedTx = positiveTx.sign(Numeric.toBigInt(privateKey), txHash);
+    printout("positiveTx.witnesses.get(0).data : " + signedTx.witnesses.get(0).data);
     return new Object[][]{
-        {positiveTx},
+        {signedTx},
     };
   }
 
@@ -165,20 +165,19 @@ public class SendTransactionTest extends JavaSDKTestBase {
         buildDeps(),
         buildInputs(deadPrevious.txHash, deadPrevious.index),
         buildOutputs(20000, 30000),
-        new ArrayList<>());
+        Collections.singletonList(new Witness(Collections.emptyList())));
     String txHash = ckbService.computeTransactionHash(deadPreviousTx).send().getTransactionHash();
     printout("deadPreviousTx computeTransactionHash is: " + txHash);
-    Witness witness = new Witness(Numeric.toBigInt(privateKey), txHash);
-    deadPreviousTx.witnesses.add(witness);
-    printout("deadPreviousTx.witnesses.get(0).data : " + deadPreviousTx.witnesses.get(0).data);
+    Transaction signedTx = deadPreviousTx.sign(Numeric.toBigInt(privateKey), txHash);
+    printout("deadPreviousTx.witnesses.get(0).data : " + signedTx.witnesses.get(0).data);
     return new Object[][]{
-        {deadPreviousTx}
+        {signedTx}
     };
   }
 
   public List<CellInput> buildInputs(String cellHash, String index) {
     OutPoint previousOutput = new OutPoint(new CellOutPoint(cellHash, index));
-    CellInput cellInput = new CellInput(previousOutput, Collections.emptyList(), validSince);
+    CellInput cellInput = new CellInput(previousOutput, validSince);
     return Arrays.asList(cellInput);
   }
 
@@ -197,7 +196,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
   public CellOutPoint getLiveCellOutPoint(String lockHash) throws Exception {
     waitForBlockHeight(BigInteger.valueOf(2), 60, 2);
     CellOutPoint sdkLiveCellOutPoint = ckbService
-        .getCellsByLockHash(lockHash, "1", "20")
+        .getCellsByLockHash(lockHash, getCellMinBlock, getCellMaxBlock)
         .send()
         .getCells()
         .get(0)
@@ -227,7 +226,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
 
   public long getOriginCapacity() throws IOException {
     List<CellOutputWithOutPoint> cells = ckbService
-        .getCellsByLockHash(lockHash, "0", "20")
+        .getCellsByLockHash(lockHash, getCellMinBlock, getCellMaxBlock)
         .send()
         .getCells();
     originCapacity = Long.valueOf(cells.get(0).capacity);
