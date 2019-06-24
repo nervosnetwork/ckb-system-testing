@@ -473,8 +473,8 @@ public class LoadTest extends LoadTestBase {
       printout("currentBlockNum is", currentBlockNum);
 
       jsonObjectGetTX = JSONObject.parseObject(HttpUtils.sendJson(url, getTXRsp));
-      printout("jsonObjectGetTX is", jsonObjectGetTX);
       if (jsonObjectGetTX.getJSONObject("error") != null) {
+        printout("request of jsonObjectGetTX is", jsonObjectGetTX);
         printout(
             "There is error message of get_tx response: " + jsonObjectGetTX.getJSONObject("error"));
         break;
