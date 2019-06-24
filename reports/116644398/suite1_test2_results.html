@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - JSONRPC API Tests</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>JSONRPC API Tests</h1>
+<p>
+  Test duration: 112.500s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetPeersStateTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetPeersStateNegative
+      </td>
+  <td class="duration">
+    0.009s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_peers_state","id":2,"jsonrpc":"2.0","params":[1212]}"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.nervos.ckb.jsonrpcTest.GetPeersStateTest.testGetPeersStateNegative(GetPeersStateTest.java:68)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)<br />
+              java.base/java.lang.Thread.run(Thread.java:844)<br />
+                </div>
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testNoPeers
+      </td>
+  <td class="duration">
+    0.019s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_peers_state","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>java.lang.NullPointerException</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              org.nervos.ckb.jsonrpcTest.GetPeersStateTest.testNoPeers(GetPeersStateTest.java:60)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)<br />
+              java.base/java.lang.Thread.run(Thread.java:844)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetBlockByNumberTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetBlockByNumberNegative
+      </td>
+  <td class="duration">
+    0.036s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_by_number","id":2,"jsonrpc":"2.0","params":[]}", "assertErrorCode"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockByNumberNegative
+      </td>
+  <td class="duration">
+    0.016s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_by_number","id":2,"jsonrpc":"2.0","params":[0]}", "assertErrorCode"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockByNumberNegative
+      </td>
+  <td class="duration">
+    0.042s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_by_number","id":2,"jsonrpc":"2.0","params":["100000"]}", "assertNull"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockByNumberPositive
+      </td>
+  <td class="duration">
+    0.032s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_by_number","id":2,"jsonrpc":"2.0","params":["1"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetBlockHashTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetBlockHashNegative
+      </td>
+  <td class="duration">
+    0.025s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash","id":2,"jsonrpc":"2.0","params":[123]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockHashNegative
+      </td>
+  <td class="duration">
+    0.345s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash","id":2,"jsonrpc":"2.0"}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockHashPositive
+      </td>
+  <td class="duration">
+    0.024s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash","id":2,"jsonrpc":"2.0","params":["99999999"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockHashPositive
+      </td>
+  <td class="duration">
+    0.057s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash","id":2,"jsonrpc":"2.0","params":["0"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockHashPositive
+      </td>
+  <td class="duration">
+    0.011s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash","id":2,"jsonrpc":"2.0","params":["1"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testHttpUnknownMethod
+      </td>
+  <td class="duration">
+    0.026s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash","id":2,"jsonrpc":"2.0","params":["0"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testPublicUseCases
+      </td>
+  <td class="duration">
+    0.017s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash","id":2,"jsonrpc":"1.0","params":["1"]}", "{"code":-32600,"message":"Invalid request"}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testPublicUseCases
+      </td>
+  <td class="duration">
+    0.030s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash_wrong_method_name","id":2,"jsonrpc":"2.0","params":["1"]}", "{"code":-32601,"message":"Method not found"}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testPublicUseCases
+      </td>
+  <td class="duration">
+    0.022s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block_hash","id":-10,"jsonrpc":"2.0","params":["1"]}", "{"code":-32700,"message":"Parse error"}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetBlockTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetBlockNegative
+      </td>
+  <td class="duration">
+    0.004s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block","id":2,"jsonrpc":"2.0","params":["0x509230e5eadd48fb2ab1cfd6237"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockNegative
+      </td>
+  <td class="duration">
+    0.012s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockNegative
+      </td>
+  <td class="duration">
+    0.036s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block","id":2,"jsonrpc":"2.0","params":[1]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockPositive
+      </td>
+  <td class="duration">
+    0.545s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block","id":2,"jsonrpc":"2.0","params":["0xfc3ad90e38598032598c90b4ad4fefb420bacabaa7c5b40111daca7dfcc1f9d4"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockPositive
+      </td>
+  <td class="duration">
+    0.030s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block","id":2,"jsonrpc":"2.0","params":["0x968cd39901f7568257f0d86b71b191a4d670de1593ef4e52abebe732a45579cb"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockPositive
+      </td>
+  <td class="duration">
+    0.021s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_block","id":2,"jsonrpc":"2.0","params":["0x1234567890123456789012345678901234567890123456789012345678901234"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetBlockchainInfoTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetBlockchainInfoNegative
+      </td>
+  <td class="duration">
+    0.026s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_blockchain_info","id":2,"jsonrpc":"2.0","params":[1212]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetBlockchainInfoPositive
+      </td>
+  <td class="duration">
+    0.030s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_blockchain_info","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetCellsByLockHashTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetCellByLockHashBlank
+      </td>
+  <td class="duration">
+    0.008s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_cells_by_lock_hash","id":2,"jsonrpc":"2.0","params":["0x1234567890123456789012345678901234567890123456789012345678901234","1","1"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetCellByLockHashNegative
+      </td>
+  <td class="duration">
+    0.013s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_cells_by_lock_hash","id":2,"jsonrpc":"2.0","params":["0x0da2fe99fe549",1,1]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetCellByLockHashNegative
+      </td>
+  <td class="duration">
+    0.028s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_cells_by_lock_hash","id":2,"jsonrpc":"2.0","params":["0xde2f3d0492ae740f3f92175143d35d0f593ac3793bc096bbeddcf8506a84ffe0",1]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetCellByLockHashNegative
+      </td>
+  <td class="duration">
+    0.008s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_cells_by_lock_hash","id":2,"jsonrpc":"2.0","params":["0xde2f3d0492ae740f3f92175143d35d0f593ac3793bc096bbeddcf8506a84ffe0","99999","1"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetCellByLockHashNegative
+      </td>
+  <td class="duration">
+    0.026s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_cells_by_lock_hash","id":2,"jsonrpc":"2.0","params":["0xde2f3d0492ae740f3f92175143d35d0f593ac3793bc096bbeddcf8506a84ffe0","2","1"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetCellByLockHashNegative
+      </td>
+  <td class="duration">
+    0.025s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_cells_by_lock_hash","id":2,"jsonrpc":"2.0","params":["0xde2f3d0492ae740f3f92175143d35d0f593ac3793bc096bbeddcf8506a84ffe0","1","99999"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetCellByLockHashNegative
+      </td>
+  <td class="duration">
+    0.058s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_cells_by_lock_hash","id":2,"jsonrpc":"2.0","params":["0xde2f3d0492ae740f3f92175143d35d0f593ac3793bc096bbeddcf8506a84ffe0","1",1]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetCellByLockHashPositive
+      </td>
+  <td class="duration">
+    0.026s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_cells_by_lock_hash","id":2,"jsonrpc":"2.0","params":["0xde2f3d0492ae740f3f92175143d35d0f593ac3793bc096bbeddcf8506a84ffe0","1","2"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetCurrentEpochTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetCurrentEpochNegative
+      </td>
+  <td class="duration">
+    0.031s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_current_epoch","id":2,"jsonrpc":"2.0","params":[1]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetCurrentEpochPositive
+      </td>
+  <td class="duration">
+    0.034s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_current_epoch","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetEpochByNumberTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  getEpochByNumInvalidNegative
+      </td>
+  <td class="duration">
+    0.063s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_epoch_by_number","id":2,"jsonrpc":"2.0","params":["10000"]}", "assertNull"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  getEpochByNumInvalidNegative
+      </td>
+  <td class="duration">
+    0.050s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_epoch_by_number","id":2,"jsonrpc":"2.0","params":["-1"]}", "assertError"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  getEpochByNumPositive
+      </td>
+  <td class="duration">
+    0.040s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_epoch_by_number","id":2,"jsonrpc":"2.0","params":["0"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetLiveCellTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetLiveCellNegativeLength
+      </td>
+  <td class="duration">
+    0.007s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_live_cell","id":2,"jsonrpc":"2.0","params":[{"cell":{"index":"0","tx_hash":""}}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetLiveCellNegativeLength
+      </td>
+  <td class="duration">
+    0.017s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_live_cell","id":2,"jsonrpc":"2.0","params":[{"cell":{"index":"0","tx_hash":"  "}}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetLiveCellNegativeLength
+      </td>
+  <td class="duration">
+    0.013s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_live_cell","id":2,"jsonrpc":"2.0","params":[{"cell":{"index":"0","tx_hash":"0xc53a74864e9ee9f9080303f65a57820b8fd0e40304714577e6b0f96165231c9d3"}}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetLiveCellNegativeUnknown
+      </td>
+  <td class="duration">
+    0.002s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_live_cell","id":2,"jsonrpc":"2.0","params":[{"cell":{"index":"0","tx_hash":"0xc53a74864e9ee9f9080303f65a57820b8fd0e40304714577e6b0f96165231c9d"}}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetLiveCellPositive
+      </td>
+  <td class="duration">
+    0.051s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_live_cell","id":2,"jsonrpc":"2.0","params":[{"cell":{"index":"0","tx_hash":"0x3f09b95f8886723cc850db0beb9c153169151c663f3e8f832dc04421fbb1f382"}}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetLiveCellPositiveDead
+      </td>
+  <td class="duration">
+    0.014s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_live_cell","id":2,"jsonrpc":"2.0","params":[{"cell":{"index":"0","tx_hash":"0x9d25d82d45db0736e12e9dec6f88725be3da359d295d0cf7915ed91e7129e4d1"}}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetPeersTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testAllPeersPositve
+      </td>
+  <td class="duration">
+    0.007s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_peers","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testDelPeer
+      </td>
+  <td class="duration">
+    2.136s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_peers","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testNewPeerPositive
+      </td>
+  <td class="duration">
+    5.858s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_peers","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testNoOtherPeersPositive
+      </td>
+  <td class="duration">
+    0.018s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_peers","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testWrongParamsNegative
+      </td>
+  <td class="duration">
+    0.016s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_peers","id":2,"jsonrpc":"2.0","params":[1]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetTipBlockNumberTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetTipBlockNumberNegative
+      </td>
+  <td class="duration">
+    0.370s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_tip_block_number","id":2,"jsonrpc":"2.0","params":[0]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetTipBlockNumberPositive
+      </td>
+  <td class="duration">
+    0.102s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_tip_block_number","id":2,"jsonrpc":"2.0"}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetTipHeaderTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetTipHeaderNegative
+      </td>
+  <td class="duration">
+    0.342s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_tip_header","id":2,"jsonrpc":"2.0","params":["123"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetTipHeaderPositive
+      </td>
+  <td class="duration">
+    0.021s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_tip_header","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetTipHeaderPositive
+      </td>
+  <td class="duration">
+    0.032s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_tip_header","id":2,"jsonrpc":"2.0"}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.GetTransactionTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testGetTransactionNegative
+      </td>
+  <td class="duration">
+    0.007s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_transaction","id":2,"jsonrpc":"2.0","params":["0x1234567"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetTransactionPositive
+      </td>
+  <td class="duration">
+    0.021s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_transaction","id":2,"jsonrpc":"2.0","params":["0x9d25d82d45db0736e12e9dec6f88725be3da359d295d0cf7915ed91e7129e4d1"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testGetTransactionPositive
+      </td>
+  <td class="duration">
+    0.011s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"get_transaction","id":2,"jsonrpc":"2.0","params":["0x1234567890123456789012345678901234567890123456789012345678901234"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.LocalNodeInfoTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testLocalNodeInfoNegative
+      </td>
+  <td class="duration">
+    0.350s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"local_node_info","id":2,"jsonrpc":"2.0","params":[1]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testLocalNodeInfoPositive
+      </td>
+  <td class="duration">
+    0.032s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"local_node_info","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.SendTransactionTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testSendTXBlankNegative
+      </td>
+  <td class="duration">
+    0.002s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[],"inputs":[],"deps":[],"version":"0","witnesses":[{"data":["0x03330c286cf95d9d96bb80ee18a96d1b97fbba9fdbd01b42313ceca12f33352c07","0x3044022019880dbd343bca1215f30c474444c3d3f96772fe9f7355b4eca0f524e74136010220576f4a9b8739e9b622d8eb8418e80f20ac8b680bdcfa1d5b962918cd17e4e655"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXNegative
+      </td>
+  <td class="duration">
+    0.028s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"},"capacity":"200000000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"},"capacity":"400000000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0x9d25d82d45db0736e12e9dec6f88725be3da359d295d0cf7915ed91e7129e4d1"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x3f09b95f8886723cc850db0beb9c153169151c663f3e8f832dc04421fbb1f382"}}],"version":"0","witnesses":[{"data":[]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPositive
+      </td>
+  <td class="duration">
+    90.747s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"},"capacity":"6000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"},"capacity":"90000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0x9d25d82d45db0736e12e9dec6f88725be3da359d295d0cf7915ed91e7129e4d1"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x3f09b95f8886723cc850db0beb9c153169151c663f3e8f832dc04421fbb1f382"}}],"version":"0","witnesses":[{"data":["0x03330c286cf95d9d96bb80ee18a96d1b97fbba9fdbd01b42313ceca12f33352c07","0x3044022019880dbd343bca1215f30c474444c3d3f96772fe9f7355b4eca0f524e74136010220576f4a9b8739e9b622d8eb8418e80f20ac8b680bdcfa1d5b962918cd17e4e655"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPreviousNegative
+      </td>
+  <td class="duration">
+    0.408s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0xe2193df51d78411601796b35b17b4f8f2cd85bd0"],"code_hash":"0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"},"capacity":"100000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd"},"capacity":"300000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0x9d25d82d45db0736e12e9dec6f88725be3da359d295d0cf7915ed91e7129e4d1"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x3f09b95f8886723cc850db0beb9c153169151c663f3e8f832dc04421fbb1f382"}}],"version":"0","witnesses":[{"data":["0x03330c286cf95d9d96bb80ee18a96d1b97fbba9fdbd01b42313ceca12f33352c07","0x304402203d314e0b43fa878b842380275f77f817a34f2452db0164837d99fdc994d6b93a02202818972442273275a9e3a92f4e217fdb9afec5e8f8283f86366dc2f9f1cfbb54","0x03330c286cf95d9d96bb80ee18a96d1b97fbba9fdbd01b42313ceca12f33352c07","0x3044022019880dbd343bca1215f30c474444c3d3f96772fe9f7355b4eca0f524e74136010220576f4a9b8739e9b622d8eb8418e80f20ac8b680bdcfa1d5b962918cd17e4e655"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.jsonrpcTest.TxPoolInfoTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testTxPoolInfoNegative
+      </td>
+  <td class="duration">
+    0.025s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"tx_pool_info","id":2,"jsonrpc":"2.0","params":["1212"]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testTxPoolInfoPositive
+      </td>
+  <td class="duration">
+    0.011s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"tx_pool_info","id":2,"jsonrpc":"2.0","params":[]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>
