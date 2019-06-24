@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - LOAD Tests</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>LOAD Tests</h1>
+<p>
+  Test duration: 121.389s
+</p>
+
+  <table class="resultsTable configTable">
+    <tr><th colspan="3" class="header failedConfig">Failed Configuration</th></tr>
+              <tr class="group">
+        <td colspan="3">org.nervos.ckb.loadTest.LoadTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  getVariableValue
+      </td>
+  <td class="duration">
+    121.389s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.IndexOutOfBoundsException: Index 0 out-of-bounds for length 0</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)<br />
+              java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)<br />
+              java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)<br />
+              java.base/java.util.Objects.checkIndex(Objects.java:372)<br />
+              java.base/java.util.ArrayList.get(ArrayList.java:440)<br />
+              com.alibaba.fastjson.JSONArray.get(JSONArray.java:237)<br />
+              org.nervos.ckb.loadTest.LoadTest.getLiveCellOutPoint(LoadTest.java:536)<br />
+              org.nervos.ckb.loadTest.LoadTest.getVariableValue(LoadTest.java:116)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)<br />
+              org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)<br />
+              org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)<br />
+              org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)<br />
+              org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)<br />
+              java.base/java.lang.Thread.run(Thread.java:844)<br />
+                </div>
+      </td>
+</tr>
+    
+          <tr><td colspan="3">&nbsp;</td></tr>
+      <tr><td colspan="3" class="header skippedConfig">Skipped Configuration</td></tr>
+                    <tr>
+          <td colspan="3" class="group">org.nervos.ckb.loadTest.LoadTest</td>
+        </tr>
+                
+<tr>
+  <td class="method">
+                  verifyDeadCell
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+        
+
+      </td>
+</tr>
+            </table>
+
+
+
+  <table class="resultsTable" width="100%">
+    <tr><th colspan="3" class="header skipped">Skipped Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.loadTest.LoadTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testSendTXBlankNegative
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXOverNegative
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPreviousNegative
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                             <i>Depends on method(s): </i>
+        <span class="dependency">org.nervos.ckb.loadTest.LoadTest.testSendTXPositive</span>
+                
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXWithoutVerification
+      </td>
+  <td class="duration">
+    0.000s
+  </td>
+  <td class="result">
+                               
+    
+        
+
+      </td>
+</tr>
+      </table>
+
+  
+</body>
+</html>
