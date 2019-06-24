@@ -47,7 +47,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
   private String getCellMaxBlock = "20";
 
   @BeforeClass
-  public void setOriginCapacity() throws IOException {
+  public void setOriginCapacity() throws Exception {
     originCapacity = getOriginCapacity();
   }
 
@@ -224,7 +224,8 @@ public class SendTransactionTest extends JavaSDKTestBase {
     return Arrays.asList(outPoint);
   }
 
-  public long getOriginCapacity() throws IOException {
+  public long getOriginCapacity() throws Exception {
+    waitForBlockHeight(BigInteger.valueOf(2), 60, 2);
     List<CellOutputWithOutPoint> cells = ckbService
         .getCellsByLockHash(lockHash, getCellMinBlock, getCellMaxBlock)
         .send()

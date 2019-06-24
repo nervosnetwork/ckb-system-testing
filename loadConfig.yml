@@ -9,7 +9,7 @@ LoadConfig:
 # minerLockHash is optional which can be empty(''), but (minerBinaryHash | minerArgs) is required
 # below is set bob as miner
   minerPrivateKey: '5c2514fb16b83259d3326a0acf05901c15a87dc46239b77b0a501cd58198dca0'
-  minerLockHash: '0x078d90ba1deccf57b682249989277c41158eba50294625d8a59af71d421a9b95'
+  minerLockHash: ''
   minerCodeHash: '0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd'
   minerArgs: '0x7f52f0fccdd1d11391c441adfb174f87bca612b0'
   aliceCodeHash: '0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd'
