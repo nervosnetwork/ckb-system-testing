@@ -20,7 +20,7 @@ public class TestBase {
   public static String containerName;
   public static String url = System.getenv("CKB_CHAIN_URL") == null ? "http://127.0.0.1:8114"
       : System.getenv("CKB_CHAIN_URL");
-  public static String codeHash = "0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08";
+  public static String codeHash = "0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd";
   public static String args = "0x7f52f0fccdd1d11391c441adfb174f87bca612b0";
   public static String lockHash;
   public static String privateKey = "5c2514fb16b83259d3326a0acf05901c15a87dc46239b77b0a501cd58198dca0";

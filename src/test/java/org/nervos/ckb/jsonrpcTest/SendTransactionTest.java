@@ -5,18 +5,19 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import org.nervos.ckb.framework.system.CKBSystem.ECode;
 import org.nervos.ckb.util.CapacityUnits;
 import org.nervos.ckb.util.HttpUtils;
+import org.nervos.ckb.util.SignWitness;
 import org.nervos.ckb.util.items.HashIndex;
 import org.nervos.ckb.util.items.Inputs;
 import org.nervos.ckb.util.items.OutPoint;
 import org.nervos.ckb.util.items.Outputs;
 import org.nervos.ckb.util.items.Script;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import org.nervos.ckb.methods.type.Witness;
+import org.nervos.ckb.util.items.Witness;
 import org.nervos.ckb.utils.Numeric;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -30,7 +31,7 @@ public class SendTransactionTest extends RPCTestBase {
   String sendTXRspHash;
   CapacityUnits capacityUnits = new CapacityUnits();
   private String version = "0";
-  private List<Object> witnesses = new ArrayList<>();
+  private List<Witness> witnesses = Collections.singletonList(new Witness(Collections.emptyList()));
   // for deps
   private String depsHash;
   private String index = "0";
@@ -45,6 +46,8 @@ public class SendTransactionTest extends RPCTestBase {
   private Script[] lock;
   private Script type;
   private long originCapacity = 50000;
+  private String getCellMinBlock = "1";
+  private String getCellMaxBlock = "20";
 
   @BeforeClass
   public void getVariableValue() {
@@ -154,9 +157,12 @@ public class SendTransactionTest extends RPCTestBase {
     String computeTxRequest = buildJsonrpcRequest("_compute_transaction_hash", buildTX);
     JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(url, computeTxRequest));
     String computeTxHash = jsonObject.getString("result");
-    Witness witness = new Witness(Numeric.toBigInt(privateKey), computeTxHash);
-    buildTX.getJSONArray("witnesses").add(witness);
-    printout("buildTX is: " + buildTX);
+
+    SignWitness signWitness = new SignWitness();
+    List<Witness> signedWitness = signWitness
+        .SignedWitness(Numeric.toBigInt(privateKey), computeTxHash, witnesses);
+    buildTX.put("witnesses", signedWitness);
+    printout("positiveData signedTX is: " + buildTX);
     String txRequest = buildJsonrpcRequest("send_transaction", buildTX);
     return new Object[][]{
         {txRequest},
@@ -181,7 +187,7 @@ public class SendTransactionTest extends RPCTestBase {
 
     JSONObject buildDeadPrevTX = buildJson(version,
         buildDeps(),
-        buildInputs(getCellTxHash(deadPrevious), index, since),
+        buildInputs(getCellTxHash(deadPrevious), getCellIndex(positivePrevious), since),
         buildOutputs("1000", "3000"),
         new ArrayList<>());
 
@@ -189,9 +195,11 @@ public class SendTransactionTest extends RPCTestBase {
     JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(url, computeTxRequest));
     String computeDeadTxHash = jsonObject.getString("result");
     printout("deadPreviousTx computeTransactionHash is: " + computeDeadTxHash);
-    Witness witness = new Witness(Numeric.toBigInt(privateKey), computeDeadTxHash);
-    buildDeadPrevTX.getJSONArray("witnesses").add(witness);
-    printout("buildDeadPrevTX.get(witnesses) : " + buildDeadPrevTX.get("witnesses"));
+
+    SignWitness signWitness = new SignWitness();
+    List<Witness> signedWitness = signWitness
+        .SignedWitness(Numeric.toBigInt(privateKey), computeDeadTxHash, witnesses);
+    buildDeadPrevTX.put("witnesses", signedWitness);
     return new Object[][]{
         {buildJsonrpcRequest("send_transaction", buildDeadPrevTX)},
     };
@@ -280,7 +288,7 @@ public class SendTransactionTest extends RPCTestBase {
 
   private JSONObject buildJson(String version, List<JSON> deps, List<JSON> inputs,
       List<JSON> outputs,
-      List<Object> witnesses) {
+      List<Witness> witnesses) {
     JSONObject jsonObject = new JSONObject();
     jsonObject.put("version", version);
     jsonObject.put("deps", deps);
@@ -290,11 +298,10 @@ public class SendTransactionTest extends RPCTestBase {
     return jsonObject;
   }
 
-
   public JSONObject getLiveCellOutPoint(String lockHash) throws Exception {
     waitForBlockHeight(2, 300, 1);
-    String request = buildJsonrpcRequest("get_cells_by_lock_hash", lockHash, "0",
-        "20");
+    String request = buildJsonrpcRequest("get_cells_by_lock_hash", lockHash, getCellMinBlock,
+        getCellMaxBlock);
     JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(url, request));
     JSONObject liveCellOutPoint = ((JSONObject) jsonObject.getJSONArray("result").get(0))
         .getJSONObject("out_point").getJSONObject("cell");
@@ -369,7 +376,7 @@ public class SendTransactionTest extends RPCTestBase {
 
   public long getOriginCapacity() {
     String request = buildJsonrpcRequest("get_cells_by_lock_hash", lockHash,
-        "0", "20");
+        getCellMinBlock, getCellMaxBlock);
     JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(url, request));
     JSONObject liveCell = (JSONObject) jsonObject.getJSONArray("result").get(0);
     JSONObject liveCellOutPoint = liveCell.getJSONObject("out_point").getJSONObject("cell");

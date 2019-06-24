@@ -10,10 +10,10 @@ LoadConfig:
 # below is set bob as miner
   minerPrivateKey: '5c2514fb16b83259d3326a0acf05901c15a87dc46239b77b0a501cd58198dca0'
   minerLockHash: '0x078d90ba1deccf57b682249989277c41158eba50294625d8a59af71d421a9b95'
-  minerCodeHash: '0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08'
+  minerCodeHash: '0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd'
   minerArgs: '0x7f52f0fccdd1d11391c441adfb174f87bca612b0'
-  aliceCodeHash: '0x9e3b3557f11b2b3532ce352bfe8017e9fd11d154c4c7f9b7aaaa1e621b539a08'
-  aliceArgs: '0xe2193df51d78411601796b35b17b4f8f2cd85bd0'
+  aliceCodeHash: '0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd'
+  aliceArgs: '0x3f1573b44218d4c12a91919a58a863be415a2bc3'
 
 # update withoutVeriTXsNumber value as you want for number of sending txs without verification;
 # note: it's better to set the number to be divisible by the cell capacity, e.g. 5/10/50(which can be divided by 50000) etc.
