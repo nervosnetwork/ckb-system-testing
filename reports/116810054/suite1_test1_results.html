@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - CLI Tests</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>CLI Tests</h1>
+<p>
+  Test duration: 442.859s
+</p>
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.cliTest.MinerCommandLineTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testMinerComLinePositive
+      </td>
+  <td class="duration">
+    1.301s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: <br/>
+Expected: a string containing &quot;ckb-miner&nbsp; solve, pow_hash&quot;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp; but: was &quot;2019-06-25 13:20:19.085 +00:00 main INFO sentry&nbsp; sentry is disabled<br/>
+2019-06-25 13:20:19.100 +00:00 client DEBUG ckb-miner&nbsp; poll block template...<br/>
+2019-06-25 13:20:19.115 +00:00 tokio-runtime-worker-0 DEBUG hyper::client::connect::http&nbsp; connecting to 0.0.0.0:8114<br/>
+2019-06-25 13:20:19.116 +00:00 tokio-runtime-worker-0 DEBUG tokio_reactor&nbsp; adding I/O source: 0<br/>
+2019-06-25 13:20:19.116 +00:00 tokio-runtime-worker-0 DEBUG tokio_reactor::registration&nbsp; scheduling Write for: 0<br/>
+2019-06-25 13:20:19.116 +00:00 tokio-runtime-worker-0 DEBUG hyper::client::connect::http&nbsp; connected to Some(V4(127.0.0.1:8114))<br/>
+2019-06-25 13:20:19.116 +00:00 tokio-runtime-worker-0 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:19.116 +00:00 tokio-runtime-worker-0 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:19.116 +00:00 tokio-runtime-worker-0 DEBUG hyper::proto::h1::io&nbsp; flushed 157 bytes<br/>
+2019-06-25 13:20:19.117 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::io&nbsp; read 1029 bytes<br/>
+2019-06-25 13:20:19.117 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::io&nbsp; parsed 3 headers<br/>
+2019-06-25 13:20:19.117 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::conn&nbsp; incoming body is content-length (905 bytes)<br/>
+2019-06-25 13:20:19.117 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::conn&nbsp; incoming body completed<br/>
+2019-06-25 13:20:19.117 +00:00 tokio-runtime-worker-1 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:19.117 +00:00 tokio-runtime-worker-1 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:19.117 +00:00 tokio-runtime-worker-1 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:19.117 +00:00 tokio-runtime-worker-1 DEBUG hyper::client::pool&nbsp; pooling idle connection for &quot;http://0.0.0.0:8114&quot;<br/>
+2019-06-25 13:20:19.118 +00:00 tokio-runtime-worker-1 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:20.118 +00:00 client DEBUG ckb-miner&nbsp; poll block template...<br/>
+2019-06-25 13:20:20.118 +00:00 tokio-runtime-worker-1 DEBUG hyper::client::pool&nbsp; reuse idle connection for &quot;http://0.0.0.0:8114&quot;<br/>
+2019-06-25 13:20:20.118 +00:00 tokio-runtime-worker-1 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:20.118 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::io&nbsp; flushed 157 bytes<br/>
+2019-06-25 13:20:20.118 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::io&nbsp; read 1029 bytes<br/>
+2019-06-25 13:20:20.122 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::io&nbsp; parsed 3 headers<br/>
+2019-06-25 13:20:20.122 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::conn&nbsp; incoming body is content-length (905 bytes)<br/>
+2019-06-25 13:20:20.122 +00:00 tokio-runtime-worker-1 DEBUG hyper::proto::h1::conn&nbsp; incoming body completed<br/>
+2019-06-25 13:20:20.122 +00:00 tokio-runtime-worker-1 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:20.122 +00:00 tokio-runtime-worker-1 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:20.122 +00:00 tokio-runtime-worker-1 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0<br/>
+2019-06-25 13:20:20.122 +00:00 tokio-runtime-worker-1 DEBUG hyper::client::pool&nbsp; pooling idle connection for &quot;http://0.0.0.0:8114&quot;<br/>
+2019-06-25 13:20:20.122 +00:00 tokio-runtime-worker-0 DEBUG tokio_reactor::registration&nbsp; scheduling Read for: 0&quot;</b></a><br />
+    <div class="stackTrace" id="exception-0">
+              org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)<br />
+              org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:8)<br />
+              org.nervos.ckb.cliTest.MinerCommandLineTest.testMinerComLinePositive(MinerCommandLineTest.java:85)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.base/java.lang.reflect.Method.invoke(Method.java:564)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:583)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)<br />
+              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)<br />
+              java.base/java.lang.Thread.run(Thread.java:844)<br />
+                </div>
+      </td>
+</tr>
+      </table>
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.cliTest.ExportCommandLineTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testExportComLineNegative
+      </td>
+  <td class="duration">
+    0.506s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">false</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testExportComLineNegative
+      </td>
+  <td class="duration">
+    0.556s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">true</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testExportComLinePositive
+      </td>
+  <td class="duration">
+    5.348s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"", false</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testExportComLinePositive
+      </td>
+  <td class="duration">
+    5.397s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">" -C /home/ckb", true</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testExportComLinePositive
+      </td>
+  <td class="duration">
+    5.453s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"", true</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.cliTest.HelpComLineTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testHelpComLineNegative
+      </td>
+  <td class="duration">
+    0.157s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"ckb xxx", "error: Found argument 'xxx' which wasn't expected, or isn't valid in this context"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testHelpComLinePositive
+      </td>
+  <td class="duration">
+    0.189s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"ckb", "Nervos CKB - The Common Knowledge Base"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testHelpComLinePositive
+      </td>
+  <td class="duration">
+    0.262s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"ckb help", "Nervos CKB - The Common Knowledge Base"</span><br />
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.cliTest.ImportCommanLineTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testCKbRunningToImport
+      </td>
+  <td class="duration">
+    22.624s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testDeleteLastLineOfExportedFile
+      </td>
+  <td class="duration">
+    21.604s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">false</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testDeleteLastLineOfExportedFile
+      </td>
+  <td class="duration">
+    21.851s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">true</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testDeleteMiddleLineOfExportedFile
+      </td>
+  <td class="duration">
+    0.690s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testImportComLinePositive
+      </td>
+  <td class="duration">
+    1.526s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"-C /home/ckb"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testImportComLinePositive
+      </td>
+  <td class="duration">
+    1.640s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">""</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testIncorrectFormat
+      </td>
+  <td class="duration">
+    0.343s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testMinerRunningToImport
+      </td>
+  <td class="duration">
+    21.691s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testNoJsonFileToImport
+      </td>
+  <td class="duration">
+    0.153s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.cliTest.MinerCommandLineTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testNodeStop
+      </td>
+  <td class="duration">
+    0.203s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testStartMoreMiner
+      </td>
+  <td class="duration">
+    129.055s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.cliTest.RunCommandLineTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testRestartCkbRun
+      </td>
+  <td class="duration">
+    15.959s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testRunComLinePositive
+      </td>
+  <td class="duration">
+    1.917s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"cat /home/ckb/data/logs/run.log", "INFO ckb-network  Listen on address"</span><br />
+    
+        
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>
