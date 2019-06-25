@@ -62,6 +62,9 @@ public class MinerCommandLineTest extends TestBase {
   // test case detail: ${TCMS}/testcase-view-802-2
   @Test
   public void testMinerComLinePositive() {
+    String command="sed -i 's/info/debug/g' ckb-miner.toml ";
+    minerCKBSystem.runCommandWithDocker(command);
+
     //start miner
     String ckbMiner = "ckb miner";
     minerCKBSystem.runCommandWithDocker(ckbMiner, "-d -it");
@@ -75,11 +78,11 @@ public class MinerCommandLineTest extends TestBase {
         ECode eCode = minerCKBSystem
             .runCommandWithDocker("cat " + defaultPath + "logs/miner.log", "-i");
         stdoutStringOfMiner.append(minerCKBSystem.getStdoutString());
-        return stdoutStringOfMiner.toString().split(System.lineSeparator()).length >= 2;
+        return stdoutStringOfMiner.toString().split(System.lineSeparator()).length >= 20;
       }
     }, 120, 1);
 
-    assertThat(stdoutStringOfMiner.toString(), containsString("INFO miner  found seal: Seal"));
+    assertThat(stdoutStringOfMiner.toString(), containsString("ckb-miner  solve, pow_hash"));
   }
 
 

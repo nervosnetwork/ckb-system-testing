@@ -7,22 +7,23 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import org.nervos.ckb.framework.system.CKBSystem;
 import org.nervos.ckb.util.CanRunMultipleTimes;
 import org.nervos.ckb.util.CapacityUnits;
 import org.nervos.ckb.util.HttpUtils;
 import org.nervos.ckb.util.ReadConfig;
+import org.nervos.ckb.util.SignWitness;
 import org.nervos.ckb.util.WaitUntil;
 import org.nervos.ckb.util.items.HashIndex;
 import org.nervos.ckb.util.items.Inputs;
 import org.nervos.ckb.util.items.OutPoint;
 import org.nervos.ckb.util.items.Outputs;
 import org.nervos.ckb.util.items.Script;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import org.nervos.ckb.methods.type.Witness;
+import org.nervos.ckb.util.items.Witness;
 import org.nervos.ckb.utils.Numeric;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -43,7 +44,7 @@ public class LoadTest extends LoadTestBase {
   CKBSystem runLoadCkbSystem;
   CapacityUnits capacityUnits = new CapacityUnits();
   private String version = "0";
-  private List<Object> witnesses = new ArrayList<>();
+  private List<Witness> witnesses = Collections.singletonList(new Witness(Collections.emptyList()));
   // for deps
   private String depsHash;
   private String index = "0";
@@ -186,10 +187,10 @@ public class LoadTest extends LoadTestBase {
     JSONObject jsonObject = JSONObject
         .parseObject(HttpUtils.sendJson(defaultUrl, computeTxRequest));
     String computeTxHash = jsonObject.getString("result");
-    Witness witness = new Witness(Numeric.toBigInt(minerPrivateKey), computeTxHash);
-    buildMultiTX.getJSONArray("witnesses").add(witness);
-    printout("buildMultiTX is: " + buildMultiTX);
-
+    SignWitness signWitness = new SignWitness();
+    List<Witness> signedWitness = signWitness
+        .SignedWitness(Numeric.toBigInt(minerPrivateKey), computeTxHash, witnesses);
+    buildMultiTX.put("witnesses", signedWitness);
     result.add(new Object[]{buildJsonrpcRequest("send_transaction", buildMultiTX)});
     return result.iterator();
   }
@@ -270,6 +271,8 @@ public class LoadTest extends LoadTestBase {
 
     //verify the send transaction response with timeout of (120(times) * 5) seconds for maximum of 5 blocks;
     verifyTXCommitted(defaultUrl, sendTXRspHash, 120, assertion);
+
+    positivePrevious.set(0, getLiveCellOutPoint(defaultUrl, minerLockHash, 0));
     deadPrevious = positivePrevious.get(0);
   }
 
@@ -380,9 +383,11 @@ public class LoadTest extends LoadTestBase {
     JSONObject jsonObject = JSONObject
         .parseObject(HttpUtils.sendJson(defaultUrl, computeTxRequest));
     String computeTxHash = jsonObject.getString("result");
-    Witness witness = new Witness(Numeric.toBigInt(minerPrivateKey), computeTxHash);
-    buildTX.getJSONArray("witnesses").add(witness);
-    printout("buildTX is: " + buildTX);
+    SignWitness signWitness = new SignWitness();
+    List<Witness> signedWitness = signWitness
+        .SignedWitness(Numeric.toBigInt(minerPrivateKey), computeTxHash, witnesses);
+    buildTX.put("witnesses", signedWitness);
+    printout("signedTX is: " + buildTX);
     return buildTX;
   }
 
@@ -468,8 +473,8 @@ public class LoadTest extends LoadTestBase {
       printout("currentBlockNum is", currentBlockNum);
 
       jsonObjectGetTX = JSONObject.parseObject(HttpUtils.sendJson(url, getTXRsp));
-      printout("jsonObjectGetTX is", jsonObjectGetTX);
       if (jsonObjectGetTX.getJSONObject("error") != null) {
+        printout("request of jsonObjectGetTX is", jsonObjectGetTX);
         printout(
             "There is error message of get_tx response: " + jsonObjectGetTX.getJSONObject("error"));
         break;
@@ -494,7 +499,7 @@ public class LoadTest extends LoadTestBase {
   }
 
   private Object buildJson(String version, List<JSON> deps, List<JSON> inputs, List<JSON> outputs,
-      List<Object> witnesses) {
+      List<Witness> witnesses) {
     JSONObject jsonObject = new JSONObject();
     jsonObject.put("version", version);
     jsonObject.put("deps", deps);
@@ -581,7 +586,7 @@ public class LoadTest extends LoadTestBase {
    * assemble inputs item
    */
   public List<JSON> buildInputs(String previousHash, String previousIndex) {
-    return buildInputs(previousHash, since, previousIndex);
+    return buildInputs(previousHash, previousIndex, since);
   }
 
   /**

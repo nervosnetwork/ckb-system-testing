@@ -57,7 +57,7 @@ public class ExportCommandLineTest extends TestBase {
         printout("current block heigeh is", blockHeight);
         return blockHeight >= 2;
       }
-    }, 240, 1);
+    }, 300, 1);
   }
 
   @AfterMethod
@@ -71,7 +71,8 @@ public class ExportCommandLineTest extends TestBase {
   // test case detail: ${TCMS}/testcase-view-807-3
   // test case detail: ${TCMS}/testcase-view-811-3
   @Test(dataProvider = "positiveData")
-  public void testExportComLinePositive(String config, boolean isStopMiner) {
+  public void testExportComLinePositive(String config, boolean isStopMiner)
+      throws InterruptedException {
     //stop this node
     exportCkbSystem.stopCkbRun();
 
@@ -84,6 +85,7 @@ public class ExportCommandLineTest extends TestBase {
     String export =
         "ckb export /tmp/export " + config + " --format json " + " && cat /tmp/export/*";
     exportCkbSystem.runCommandWithDocker(export);
+    Thread.sleep(5000);
     String backupContent = exportCkbSystem.getStdoutString();
 
     assertThat(backupContent, containsString("\"number\":2"));
