@@ -35,7 +35,7 @@ cache:
 install: make setup
 
 env:
-  - CKB_START_LOCAL_TESTNET=1 CKB_DOCKER_IMAGE_TAG_NAME=v0.14.0
+  - CKB_START_LOCAL_TESTNET=1 CKB_DOCKER_IMAGE_TAG_NAME=v0.15.0-rc1
 
 jobs:
   include:
