@@ -78,7 +78,7 @@ public class MinerCommandLineTest extends TestBase {
         ECode eCode = minerCKBSystem
             .runCommandWithDocker("cat " + defaultPath + "logs/miner.log", "-i");
         stdoutStringOfMiner.append(minerCKBSystem.getStdoutString());
-        return stdoutStringOfMiner.toString().split(System.lineSeparator()).length >= 2;
+        return stdoutStringOfMiner.toString().split(System.lineSeparator()).length >= 20;
       }
     }, 120, 1);
 
