@@ -12,8 +12,13 @@ setup:
 	
 	# show Maven version
 	mvn --version
-	make install-sdk
-#	make install-sdk-for-ci
+
+	# install ckb-sdk-java
+	if [ "$${CKB_SDK_JAVA_DOWNLOAD_URL}" == "" ]; then \
+		make install-sdk ;\
+	else \
+		make install-sdk-for-ci ;\
+	fi
 
 # Download .jar from https://github.com/nervosnetwork/ckb-sdk-java/releases/download/$$CKB_SDK_JAVA_VERSION
 #refs: https://gist.github.com/timmolderez/92bea7cc90201cd3273a07cf21d119eb
