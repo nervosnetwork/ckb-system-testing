@@ -176,7 +176,6 @@ public class CKBSystem {
 
   /**
    * add indexer methods
-   *
    */
   public void addIndexerMethodModuleConfig() {
     String addCmd = "sed -i 's/Stats\\\", \\\"Experiment/Stats\\\", \\\"Indexer\\\", \\\"Experiment/' ckb.toml";
