@@ -17,6 +17,8 @@
   </test>
   <test name="JSONRPC API Tests" preserve-order="true" verbose="2">
     <classes>
+      <class name="org.nervos.ckb.jsonrpcTest.IndexLockHashTest"/>
+      <class name="org.nervos.ckb.jsonrpcTest.DeIndexLockHashTest"/>
       <class name="org.nervos.ckb.jsonrpcTest.GetTipBlockNumberTest"/>
       <class name="org.nervos.ckb.jsonrpcTest.GetBlockHashTest"/>
       <class name="org.nervos.ckb.jsonrpcTest.GetTipHeaderTest"/>
