@@ -10,9 +10,9 @@ LoadConfig:
 # below is set bob as miner
   minerPrivateKey: '5c2514fb16b83259d3326a0acf05901c15a87dc46239b77b0a501cd58198dca0'
   minerLockHash: ''
-  minerCodeHash: '0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd'
+  minerCodeHash: '0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933'
   minerArgs: '0x7f52f0fccdd1d11391c441adfb174f87bca612b0'
-  aliceCodeHash: '0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd'
+  aliceCodeHash: '0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933'
   aliceArgs: '0x3f1573b44218d4c12a91919a58a863be415a2bc3'
 
 # update withoutVeriTXsNumber value as you want for number of sending txs without verification;

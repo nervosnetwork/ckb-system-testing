@@ -4,10 +4,10 @@ import static java.lang.Thread.sleep;
 
 import org.nervos.ckb.TestBase;
 import org.nervos.ckb.framework.system.CKBSystem;
+import org.nervos.ckb.methods.type.transaction.TransactionWithStatus.TxStatus;
 import org.nervos.ckb.util.WaitUntil;
 import java.io.IOException;
 import java.math.BigInteger;
-import org.nervos.ckb.methods.type.TransactionWithStatus.TxStatus;
 import org.nervos.ckb.service.CKBService;
 
 public class JavaSDKTestBase extends TestBase {

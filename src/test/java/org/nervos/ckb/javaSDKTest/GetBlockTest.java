@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.List;
 import org.nervos.ckb.methods.response.CkbBlock;
 import org.nervos.ckb.methods.type.Block;
-import org.nervos.ckb.methods.type.Transaction;
+import org.nervos.ckb.methods.type.transaction.Transaction;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

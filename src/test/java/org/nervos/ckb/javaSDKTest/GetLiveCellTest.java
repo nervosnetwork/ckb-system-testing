@@ -3,12 +3,12 @@ package org.nervos.ckb.javaSDKTest;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
-import org.nervos.ckb.TestBase;
 import java.io.IOException;
+import org.nervos.ckb.TestBase;
 import org.nervos.ckb.methods.response.CkbCell;
-import org.nervos.ckb.methods.type.Cell;
-import org.nervos.ckb.methods.type.CellOutPoint;
 import org.nervos.ckb.methods.type.OutPoint;
+import org.nervos.ckb.methods.type.cell.Cell;
+import org.nervos.ckb.methods.type.cell.CellOutPoint;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

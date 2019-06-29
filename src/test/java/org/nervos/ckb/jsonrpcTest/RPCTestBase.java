@@ -146,7 +146,6 @@ public class RPCTestBase extends TestBase {
 
     for (int i = 0; i < object.length; i++) {
       jsonObj = (JSON) JSONObject.toJSON(object[i]);
-      System.out.println("object[i]:" + object[i]);
       list.add(jsonObj);
     }
     System.out.println("list is: " + list);
