@@ -82,7 +82,7 @@ public class MinerCommandLineTest extends TestBase {
       }
     }, 120, 1);
 
-    assertThat(stdoutStringOfMiner.toString(), containsString("ckb-miner  solve, pow_hash"));
+    assertThat(stdoutStringOfMiner.toString(), containsString("ckb-miner  poll block template"));
   }
 
 
