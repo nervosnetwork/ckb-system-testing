@@ -6,7 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import java.io.IOException;
 import java.math.BigInteger;
 import org.nervos.ckb.methods.Response.Error;
-import org.nervos.ckb.methods.type.TransactionWithStatus;
+import org.nervos.ckb.methods.type.transaction.TransactionWithStatus;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

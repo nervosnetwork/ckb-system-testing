@@ -29,9 +29,8 @@ public class SignWitness {
 
       String signature =
           Numeric.toHexString(
-              Sign.signMessage(Numeric.hexStringToByteArray(message), ecKeyPair).getDerSignature());
+              Sign.signMessage(Numeric.hexStringToByteArray(message), ecKeyPair).getSignature());
       witness.data = new ArrayList<>();
-      witness.data.add(publicKey);
       witness.data.add(signature);
       witness.data.addAll(oldData);
       signedWitnesses.add(witness);

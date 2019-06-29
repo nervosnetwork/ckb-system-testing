@@ -3,10 +3,10 @@ package org.nervos.ckb;
 import com.alibaba.fastjson.JSONObject;
 import org.nervos.ckb.framework.system.CKBSystem;
 import org.nervos.ckb.framework.system.CKBSystem.ECode;
+import org.nervos.ckb.methods.type.cell.CellOutPoint;
 import org.nervos.ckb.util.WaitUntil;
 import org.nervos.ckb.util.items.Script;
 import java.util.Collections;
-import org.nervos.ckb.methods.type.CellOutPoint;
 import org.nervos.ckb.service.CKBService;
 import org.nervos.ckb.service.HttpService;
 import org.testng.Reporter;
@@ -20,7 +20,7 @@ public class TestBase {
   public static String containerName;
   public static String url = System.getenv("CKB_CHAIN_URL") == null ? "http://127.0.0.1:8114"
       : System.getenv("CKB_CHAIN_URL");
-  public static String codeHash = "0xf1951123466e4479842387a66fabfd6b65fc87fd84ae8e6cd3053edb27fff2fd";
+  public static String codeHash = "0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933";
   public static String args = "0x7f52f0fccdd1d11391c441adfb174f87bca612b0";
   public static String lockHash;
   public static String privateKey = "5c2514fb16b83259d3326a0acf05901c15a87dc46239b77b0a501cd58198dca0";

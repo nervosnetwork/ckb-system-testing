@@ -14,9 +14,9 @@ public class GetCurrentEpochTest extends TestBase {
     CkbEpoch ckbEpoch = ckbService
         .getCurrentEpoch()
         .send();
-    long blockReward = Long.parseLong(ckbEpoch.result.blockReward);
-    Assert.assertTrue(blockReward <= 5000000000000L,
-        "The block reward should be smaller than 5000000000000");
+    long epochReward = Long.parseLong(ckbEpoch.result.epochReward);
+    Assert.assertTrue(epochReward <= 125000000000000L,
+        "The block reward should be smaller than 125000000000000");
   }
 
 }

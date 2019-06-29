@@ -37,7 +37,7 @@ public class SendTransactionTest extends RPCTestBase {
   private String index = "0";
   // for outputs
   private String aliceCodeHash = codeHash;
-  private String aliceArgs = "0xe2193df51d78411601796b35b17b4f8f2cd85bd0";
+  private String aliceArgs = "0x3f1573b44218d4c12a91919a58a863be415a2bc3";
   private String minerCodeHash = codeHash;
   private String minerArgs = args;
   private String since = "0";
@@ -349,7 +349,6 @@ public class SendTransactionTest extends RPCTestBase {
   public List<JSON> buildInputs(String previous, String index, String validSince) {
     OutPoint previousOutput = new OutPoint(null, new HashIndex(previous, index));
     Inputs inputs = new Inputs(previousOutput, Collections.emptyList(), validSince);
-    System.out.println("inputs is: " + inputs);
     return jsonToList(inputs);
   }
 

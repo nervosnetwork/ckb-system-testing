@@ -1,7 +1,7 @@
 package org.nervos.ckb.javaSDKTest;
 
-import org.nervos.ckb.TestBase;
 import java.io.IOException;
+import org.nervos.ckb.TestBase;
 import org.nervos.ckb.methods.response.CkbEpoch;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -15,9 +15,9 @@ public class GetEpochByNumberTest extends TestBase {
     CkbEpoch ckbEpoch = ckbService
         .getEpochByNumber(getEpochByNumPositiveData)
         .send();
-    long blockReward = Long.parseLong(ckbEpoch.result.blockReward);
-    Assert.assertTrue(blockReward <= 5000000000000L,
-        "The block reward should be smaller than 5000000000000");
+    long epochReward = Long.parseLong(ckbEpoch.result.epochReward);
+    Assert.assertTrue(epochReward <= 125000000000000L,
+        "The block reward should be smaller than 125000000000000");
   }
 
   // test case detail: ${TCMS}/testcase-view-1444-1

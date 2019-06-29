@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import java.math.BigInteger;
 import java.util.List;
 import org.nervos.ckb.methods.response.CkbCells;
-import org.nervos.ckb.methods.type.CellOutputWithOutPoint;
+import org.nervos.ckb.methods.type.cell.CellOutputWithOutPoint;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
