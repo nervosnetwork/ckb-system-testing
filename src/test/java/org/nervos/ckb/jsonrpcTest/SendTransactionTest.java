@@ -133,7 +133,8 @@ public class SendTransactionTest extends RPCTestBase {
     JSONObject errorMsg = (JSONObject) jsonObject.get("error");
     Assert.assertNotNull(errorMsg, "The error message response should not be null.");
     Assert.assertEquals(errorMsg.getIntValue("code"), -3);
-    assertThat(errorMsg.getString("message"), containsString("Dead(OutPoint"));
+    // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+    assertThat(errorMsg.getString("message"), containsString("Unknown([OutPoint"));
   }
 
   @DataProvider

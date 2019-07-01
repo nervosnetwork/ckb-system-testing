@@ -113,7 +113,8 @@ public class SendTransactionTest extends JavaSDKTestBase {
         .send()
         .error;
     Assert.assertEquals(sendTXRsp.code, -3);
-    assertThat(sendTXRsp.message, CoreMatchers.containsString("Dead(OutPoint"));
+    // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+    assertThat(sendTXRsp.message, CoreMatchers.containsString("Unknown([OutPoint"));
   }
 
   @DataProvider
