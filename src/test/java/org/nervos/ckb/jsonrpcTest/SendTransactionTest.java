@@ -46,7 +46,7 @@ public class SendTransactionTest extends RPCTestBase {
   private Script[] lock;
   private Script type;
   private long originCapacity = 50000;
-  private String getCellMinBlock = "1";
+  private String getCellMinBlock = "12";
   private String getCellMaxBlock = "20";
 
   @BeforeClass
@@ -299,7 +299,7 @@ public class SendTransactionTest extends RPCTestBase {
   }
 
   public JSONObject getLiveCellOutPoint(String lockHash) throws Exception {
-    waitForBlockHeight(2, 300, 1);
+    waitForBlockHeight(12, 360, 5);
     String request = buildJsonrpcRequest("get_cells_by_lock_hash", lockHash, getCellMinBlock,
         getCellMaxBlock);
     JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(url, request));
