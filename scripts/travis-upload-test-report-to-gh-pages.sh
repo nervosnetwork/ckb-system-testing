@@ -12,7 +12,7 @@ if [ $TRAVIS = "true" ]; then
   owner_name=`echo $TRAVIS_REPO_SLUG|cut -d / -f 1`
   repo_name=`echo $TRAVIS_REPO_SLUG|cut -d / -f 2`
   gh_pages_url="https://$owner_name.github.io/$repo_name"
-  travis_build_url="https://travis-ci.org/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
+  travis_build_url="https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_BUILD_ID"
   test_report_url="$gh_pages_url/reports/$TRAVIS_BUILD_ID/"
   test_result_mark=`[ $TRAVIS_TEST_RESULT = 0 ] && printf "✔" || printf "✘"`
 
