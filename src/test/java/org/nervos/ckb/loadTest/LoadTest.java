@@ -70,6 +70,7 @@ public class LoadTest extends LoadTestBase {
   private int outputNum = (int) conf.getYMLValue(YML_TITLE, "withoutVeriTXsNumber");
   private long originCapacity = 50000;
   private long outputCapacity;
+  private int minBlockNum = 11 + differentTXsNum;
 
   @BeforeClass
   public void getVariableValue() throws Exception {
@@ -130,7 +131,8 @@ public class LoadTest extends LoadTestBase {
       JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(defaultUrl, deadCellReq));
       Assert.assertNull(jsonObject.getJSONObject("result").get("cell"),
           "get_live_cell: " + positivePrevious.get(i) + " should be null");
-      Assert.assertEquals(jsonObject.getJSONObject("result").get("status"), "dead");
+      // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+      Assert.assertEquals(jsonObject.getJSONObject("result").get("status"), "unknown");
     }
     if (CKBStartLocal == 1) {
       runLoadCkbSystem.cleanEnv();
@@ -328,7 +330,8 @@ public class LoadTest extends LoadTestBase {
       JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(tmpURL, negativeData));
       JSONObject errorMsg = (JSONObject) jsonObject.get("error");
       Assert.assertNotNull(errorMsg, "The error message response should not be null.");
-      assertThat(errorMsg.getString("message"), containsString("Dead(OutPoint"));
+      // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+      assertThat(errorMsg.getString("message"), containsString("Unknown([OutPoint"));
     }
   }
 
@@ -650,7 +653,7 @@ public class LoadTest extends LoadTestBase {
         }
         int blockHeight = JSONObject.parseObject(stdoutString).getIntValue("result");
         printout("current block heigeh is", blockHeight);
-        return blockHeight >= 3;
+        return blockHeight >= minBlockNum;
       }
     }, 240, 5);
   }

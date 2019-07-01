@@ -58,7 +58,8 @@ public class GetLiveCellTest extends TestBase {
         .getLiveCell(new OutPoint(null, positiveDeadCellData))
         .send()
         .getCell();
-    Assert.assertEquals(cell.status, "dead");
+    // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+    Assert.assertEquals(cell.status, "unknown");
   }
 
   @DataProvider

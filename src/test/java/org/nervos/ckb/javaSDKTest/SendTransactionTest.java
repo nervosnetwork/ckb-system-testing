@@ -43,7 +43,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
   private String data = "0x";
   private String version = "0";
   private long originCapacity = 50000;
-  private String getCellMinBlock = "1";
+  private String getCellMinBlock = "12";
   private String getCellMaxBlock = "20";
 
   @BeforeClass
@@ -113,7 +113,8 @@ public class SendTransactionTest extends JavaSDKTestBase {
         .send()
         .error;
     Assert.assertEquals(sendTXRsp.code, -3);
-    assertThat(sendTXRsp.message, CoreMatchers.containsString("Dead(OutPoint"));
+    // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+    assertThat(sendTXRsp.message, CoreMatchers.containsString("Unknown([OutPoint"));
   }
 
   @DataProvider
@@ -194,7 +195,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
   }
 
   public CellOutPoint getLiveCellOutPoint(String lockHash) throws Exception {
-    waitForBlockHeight(BigInteger.valueOf(2), 60, 2);
+    waitForBlockHeight(BigInteger.valueOf(12), 360, 5);
     CellOutPoint sdkLiveCellOutPoint = ckbService
         .getCellsByLockHash(lockHash, getCellMinBlock, getCellMaxBlock)
         .send()
@@ -225,7 +226,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
   }
 
   public long getOriginCapacity() throws Exception {
-    waitForBlockHeight(BigInteger.valueOf(2), 60, 2);
+    waitForBlockHeight(BigInteger.valueOf(12), 360, 2);
     List<CellOutputWithOutPoint> cells = ckbService
         .getCellsByLockHash(lockHash, getCellMinBlock, getCellMaxBlock)
         .send()

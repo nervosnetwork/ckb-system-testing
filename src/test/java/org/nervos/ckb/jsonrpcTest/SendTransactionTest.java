@@ -46,7 +46,7 @@ public class SendTransactionTest extends RPCTestBase {
   private Script[] lock;
   private Script type;
   private long originCapacity = 50000;
-  private String getCellMinBlock = "1";
+  private String getCellMinBlock = "12";
   private String getCellMaxBlock = "20";
 
   @BeforeClass
@@ -133,7 +133,8 @@ public class SendTransactionTest extends RPCTestBase {
     JSONObject errorMsg = (JSONObject) jsonObject.get("error");
     Assert.assertNotNull(errorMsg, "The error message response should not be null.");
     Assert.assertEquals(errorMsg.getIntValue("code"), -3);
-    assertThat(errorMsg.getString("message"), containsString("Dead(OutPoint"));
+    // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+    assertThat(errorMsg.getString("message"), containsString("Unknown([OutPoint"));
   }
 
   @DataProvider
@@ -299,7 +300,7 @@ public class SendTransactionTest extends RPCTestBase {
   }
 
   public JSONObject getLiveCellOutPoint(String lockHash) throws Exception {
-    waitForBlockHeight(2, 300, 1);
+    waitForBlockHeight(12, 360, 5);
     String request = buildJsonrpcRequest("get_cells_by_lock_hash", lockHash, getCellMinBlock,
         getCellMaxBlock);
     JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(url, request));
