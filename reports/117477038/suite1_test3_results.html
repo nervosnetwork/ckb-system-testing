@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="" lang="">
+<head>
+  <title>Test Results Report - LOAD Tests</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="description" content="TestNG unit test results." />
+  <link href="reportng.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="reportng.js"></script>
+</head>
+<body>
+<h1>LOAD Tests</h1>
+<p>
+  Test duration: 131.463s
+</p>
+
+
+
+
+
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">org.nervos.ckb.loadTest.LoadTest</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testSendTXBlankNegative
+      </td>
+  <td class="duration">
+    0.006s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[],"inputs":[],"deps":[],"version":"0","witnesses":[{"data":["0x04267106b58f054f31bbd22ff6a32b066c8ff7c69eee3e0c6d68be60a6ddb9014d1296c12bcec2639fa01a75e1403fc313e0f54578ec593b38bb58be4a8e6ca200","0xccf8588c64ac5becf202aee181d1deb10f930c05d471e890bb47568a143d29523a61e7f14e2cb3c026d2c077762fae12caecb5d6a22c0ca7a21be7c87be8030a00","0x7d8f67d15009ae6655509c7e90df52c8e83180e7aa5e7c6d641049919e86b0410c31882b3f1bc22493ad5c64de0e987884a4614b249d169dde800f758281bd6301"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXOverNegative
+      </td>
+  <td class="duration">
+    0.005s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"200000000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"400000000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0xeeb166f7840ff4bf5ab4c286d46bc451cb705bbb9927ae0e3fb53f578d5c4307"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x606242ae42a472e8d8bc542cc64f8ae0430d948e3efff4e44121f8ae67709671"}}],"version":"0","witnesses":[{"data":[]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPositive
+      </td>
+  <td class="duration">
+    20.088s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"6000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"94000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0x9bdd9f08d376d50c932d9653dce40c1db958760abd2435345062cd5f3dd27ea5"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x606242ae42a472e8d8bc542cc64f8ae0430d948e3efff4e44121f8ae67709671"}}],"version":"0","witnesses":[{"data":["0xccf8588c64ac5becf202aee181d1deb10f930c05d471e890bb47568a143d29523a61e7f14e2cb3c026d2c077762fae12caecb5d6a22c0ca7a21be7c87be8030a00","0x7d8f67d15009ae6655509c7e90df52c8e83180e7aa5e7c6d641049919e86b0410c31882b3f1bc22493ad5c64de0e987884a4614b249d169dde800f758281bd6301"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPositive
+      </td>
+  <td class="duration">
+    20.074s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"6000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"90000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0xeeb166f7840ff4bf5ab4c286d46bc451cb705bbb9927ae0e3fb53f578d5c4307"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x606242ae42a472e8d8bc542cc64f8ae0430d948e3efff4e44121f8ae67709671"}}],"version":"0","witnesses":[{"data":["0x7d8f67d15009ae6655509c7e90df52c8e83180e7aa5e7c6d641049919e86b0410c31882b3f1bc22493ad5c64de0e987884a4614b249d169dde800f758281bd6301"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXPreviousNegative
+      </td>
+  <td class="duration">
+    0.006s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"100000000000"},{"data":"0x","lock":{"args":["0x7f52f0fccdd1d11391c441adfb174f87bca612b0"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"300000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0x8999bb0d37baf3cd1abe4c339bf6143e965addb68ae095ae1ec1c2a6340180fd"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x606242ae42a472e8d8bc542cc64f8ae0430d948e3efff4e44121f8ae67709671"}}],"version":"0","witnesses":[{"data":["0x04267106b58f054f31bbd22ff6a32b066c8ff7c69eee3e0c6d68be60a6ddb9014d1296c12bcec2639fa01a75e1403fc313e0f54578ec593b38bb58be4a8e6ca200","0xccf8588c64ac5becf202aee181d1deb10f930c05d471e890bb47568a143d29523a61e7f14e2cb3c026d2c077762fae12caecb5d6a22c0ca7a21be7c87be8030a00","0x7d8f67d15009ae6655509c7e90df52c8e83180e7aa5e7c6d641049919e86b0410c31882b3f1bc22493ad5c64de0e987884a4614b249d169dde800f758281bd6301"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+<tr>
+  <td class="method">
+                  testSendTXWithoutVerification
+      </td>
+  <td class="duration">
+    20.077s
+  </td>
+  <td class="result">
+        
+          <i>Method arguments: </i><span class="arguments">"{"method":"send_transaction","id":2,"jsonrpc":"2.0","params":[{"outputs":[{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"20000000000"},{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"20000000000"},{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"20000000000"},{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"20000000000"},{"data":"0x","lock":{"args":["0x3f1573b44218d4c12a91919a58a863be415a2bc3"],"code_hash":"0x94334bdda40b69bae067d84937aa6bbccf8acd0df6626d4b9ac70d4612a11933"},"capacity":"20000000000"}],"inputs":[{"args":[],"previous_output":{"cell":{"index":"0","tx_hash":"0x8999bb0d37baf3cd1abe4c339bf6143e965addb68ae095ae1ec1c2a6340180fd"}},"since":"0"}],"deps":[{"cell":{"index":"1","tx_hash":"0x606242ae42a472e8d8bc542cc64f8ae0430d948e3efff4e44121f8ae67709671"}}],"version":"0","witnesses":[{"data":["0x04267106b58f054f31bbd22ff6a32b066c8ff7c69eee3e0c6d68be60a6ddb9014d1296c12bcec2639fa01a75e1403fc313e0f54578ec593b38bb58be4a8e6ca200","0xccf8588c64ac5becf202aee181d1deb10f930c05d471e890bb47568a143d29523a61e7f14e2cb3c026d2c077762fae12caecb5d6a22c0ca7a21be7c87be8030a00","0x7d8f67d15009ae6655509c7e90df52c8e83180e7aa5e7c6d641049919e86b0410c31882b3f1bc22493ad5c64de0e987884a4614b249d169dde800f758281bd6301"]}]}]}"</span><br />
+    
+        
+
+      </td>
+</tr>
+      </table>
+  
+</body>
+</html>
