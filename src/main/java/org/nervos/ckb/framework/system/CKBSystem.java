@@ -165,6 +165,24 @@ public class CKBSystem {
   }
 
   /**
+   * init and update config then start ckb run
+   */
+  public void ckbInitAddIndexerRun() {
+    initCKB();
+    updateBlockAssemblerConfig();
+    addIndexerMethodModuleConfig();
+    startCKBRun();
+  }
+
+  /**
+   * add indexer methods
+   */
+  public void addIndexerMethodModuleConfig() {
+    String addCmd = "sed -i 's/Stats\\\", \\\"Experiment/Stats\\\", \\\"Indexer\\\", \\\"Experiment/' ckb.toml";
+    runCommandWithDocker(addCmd);
+  }
+
+  /**
    * update to un-comment the block_assembler
    *
    * the minerArgs can be get from 'ckb cli secp256k1-lock <pubkey>'

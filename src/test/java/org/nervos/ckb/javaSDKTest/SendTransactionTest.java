@@ -11,15 +11,15 @@ import java.util.List;
 import org.hamcrest.CoreMatchers;
 import org.nervos.ckb.methods.Response.Error;
 import org.nervos.ckb.methods.response.CkbTransactionHash;
-import org.nervos.ckb.methods.type.CellInput;
-import org.nervos.ckb.methods.type.CellOutPoint;
-import org.nervos.ckb.methods.type.CellOutput;
-import org.nervos.ckb.methods.type.CellOutputWithOutPoint;
 import org.nervos.ckb.methods.type.OutPoint;
 import org.nervos.ckb.methods.type.Script;
-import org.nervos.ckb.methods.type.Transaction;
-import org.nervos.ckb.methods.type.TransactionWithStatus.TxStatus;
 import org.nervos.ckb.methods.type.Witness;
+import org.nervos.ckb.methods.type.cell.CellInput;
+import org.nervos.ckb.methods.type.cell.CellOutPoint;
+import org.nervos.ckb.methods.type.cell.CellOutput;
+import org.nervos.ckb.methods.type.cell.CellOutputWithOutPoint;
+import org.nervos.ckb.methods.type.transaction.Transaction;
+import org.nervos.ckb.methods.type.transaction.TransactionWithStatus.TxStatus;
 import org.nervos.ckb.util.CapacityUnits;
 import org.nervos.ckb.utils.Numeric;
 import org.testng.Assert;
@@ -43,7 +43,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
   private String data = "0x";
   private String version = "0";
   private long originCapacity = 50000;
-  private String getCellMinBlock = "1";
+  private String getCellMinBlock = "12";
   private String getCellMaxBlock = "20";
 
   @BeforeClass
@@ -113,7 +113,8 @@ public class SendTransactionTest extends JavaSDKTestBase {
         .send()
         .error;
     Assert.assertEquals(sendTXRsp.code, -3);
-    assertThat(sendTXRsp.message, CoreMatchers.containsString("Dead(OutPoint"));
+    // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+    assertThat(sendTXRsp.message, CoreMatchers.containsString("Unknown([OutPoint"));
   }
 
   @DataProvider
@@ -194,7 +195,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
   }
 
   public CellOutPoint getLiveCellOutPoint(String lockHash) throws Exception {
-    waitForBlockHeight(BigInteger.valueOf(2), 60, 2);
+    waitForBlockHeight(BigInteger.valueOf(12), 360, 5);
     CellOutPoint sdkLiveCellOutPoint = ckbService
         .getCellsByLockHash(lockHash, getCellMinBlock, getCellMaxBlock)
         .send()
@@ -225,7 +226,7 @@ public class SendTransactionTest extends JavaSDKTestBase {
   }
 
   public long getOriginCapacity() throws Exception {
-    waitForBlockHeight(BigInteger.valueOf(2), 60, 2);
+    waitForBlockHeight(BigInteger.valueOf(12), 360, 2);
     List<CellOutputWithOutPoint> cells = ckbService
         .getCellsByLockHash(lockHash, getCellMinBlock, getCellMaxBlock)
         .send()

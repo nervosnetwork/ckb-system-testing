@@ -48,7 +48,8 @@ public class GetLiveCellTest extends RPCTestBase {
   public void testGetLiveCellPositiveDead(String positiveDeadCellData) {
     JSONObject jsonObject = JSONObject.parseObject(HttpUtils.sendJson(url, positiveDeadCellData));
     Assert.assertNull(jsonObject.getJSONObject("result").get("cell"));
-    Assert.assertEquals(jsonObject.getJSONObject("result").get("status"), "dead");
+    // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+    Assert.assertEquals(jsonObject.getJSONObject("result").get("status"), "unknown");
   }
 
   @DataProvider

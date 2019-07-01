@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import java.math.BigInteger;
 import java.util.List;
 import org.nervos.ckb.methods.response.CkbCells;
-import org.nervos.ckb.methods.type.CellOutputWithOutPoint;
+import org.nervos.ckb.methods.type.cell.CellOutputWithOutPoint;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -18,7 +18,7 @@ public class GetCellsByLockHashTest extends JavaSDKTestBase {
   @Test(dataProvider = "positiveData")
   public void testGetCellByLockHashPositive(String lockHash, String beginBlockHeight,
       String endBlockHeight) throws Exception {
-    waitForBlockHeight(new BigInteger("2"), 60, 1);
+    waitForBlockHeight(new BigInteger("12"), 360, 1);
     List<CellOutputWithOutPoint> cells = ckbService
         .getCellsByLockHash(lockHash, beginBlockHeight, endBlockHeight)
         .send()
@@ -53,8 +53,8 @@ public class GetCellsByLockHashTest extends JavaSDKTestBase {
   @DataProvider
   public Object[][] positiveData() {
     return new Object[][]{
-        {lockHash, "1", "2"},
-        {lockHash, "1", "101"}// end bigger than current blockHeight
+        {lockHash, "12", "13"},
+        {lockHash, "12", "112"}// end bigger than current blockHeight
     };
   }
 

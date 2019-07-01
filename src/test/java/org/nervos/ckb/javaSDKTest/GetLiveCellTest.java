@@ -3,12 +3,12 @@ package org.nervos.ckb.javaSDKTest;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
-import org.nervos.ckb.TestBase;
 import java.io.IOException;
+import org.nervos.ckb.TestBase;
 import org.nervos.ckb.methods.response.CkbCell;
-import org.nervos.ckb.methods.type.Cell;
-import org.nervos.ckb.methods.type.CellOutPoint;
 import org.nervos.ckb.methods.type.OutPoint;
+import org.nervos.ckb.methods.type.cell.Cell;
+import org.nervos.ckb.methods.type.cell.CellOutPoint;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -58,7 +58,8 @@ public class GetLiveCellTest extends TestBase {
         .getLiveCell(new OutPoint(null, positiveDeadCellData))
         .send()
         .getCell();
-    Assert.assertEquals(cell.status, "dead");
+    // from CKB v0.15.0, if the previous_output is fully dead, the cell's status will be unknown instead of dead
+    Assert.assertEquals(cell.status, "unknown");
   }
 
   @DataProvider

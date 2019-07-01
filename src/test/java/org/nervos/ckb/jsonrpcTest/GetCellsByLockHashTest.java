@@ -56,18 +56,18 @@ public class GetCellsByLockHashTest extends RPCTestBase {
 
   @DataProvider
   public Object[][] blankData() throws Exception {
-    waitForBlockHeight(2, 180, 1);
+    waitForBlockHeight(12, 180, 1);
     return new Object[][]{
         {buildJsonrpcRequest("get_cells_by_lock_hash",
-            "0x1234567890123456789012345678901234567890123456789012345678901234", "1", "1")},
+            "0x1234567890123456789012345678901234567890123456789012345678901234", "12", "12")},
     };
   }
 
   @DataProvider
   public Object[][] positiveData() throws Exception {
-    waitForBlockHeight(2, 180, 1);
+    waitForBlockHeight(12, 180, 1);
     return new Object[][]{
-        {buildJsonrpcRequest("get_cells_by_lock_hash", lockHash, "1", "2")},
+        {buildJsonrpcRequest("get_cells_by_lock_hash", lockHash, "12", "13")},
     };
   }
 
